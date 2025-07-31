@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registration</title>
+    </head>
+    <body >
+   
+    <form id="registartionform" onsubmit="return validateForm()">
+    <label for="name">Name</label>
+    <input type="text" id="name" required /><br /><br />
+    <label for="email">Email</label>
+    <input type="email" id="email" required /><br /><br />
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" required pattern="[0-9]{10}" /><br /><br />
+    <label for="event">Select Event</label>
+    <select id="event" required>
+      <option value="">---select---</option>
+      <option value="workshop">workshop</option>
+      <option value="seminar">seminar</option>
+      <option value="conference">conference</option>
+    </select>
+    <br /><br />
+
+    <p> choose your favorite web languyage:</p>
+    <input type = "radio" id = "html" name = "fav_language" value = "HTML">
+    <label for =  "html">HTML</label><br>
+    <input type = "radio" id = "css" name = "fav_language" value = "CSS">
+    <label for =  "html">CSS</label><br>
+    <input type = "radio" id = "javascript" name = "fav_language" value = "javascript">
+    <label for =  "html">javascript</label><br>
+    <button type="submit">register</button>
+   
+</form>
+
+<script>
+  function validateForm() {
+    const phone = document.getElementById("phone").value;
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Invalid phone number");
+      return false;
+    }
+    alert("Registration Successful");
+    return true; 
+  }
+</script>
+
+</body>
+
+</html>
+    
